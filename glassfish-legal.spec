@@ -4,7 +4,7 @@
 
 Name:          %{?scl_prefix}%{pkg_name}
 Version:       1.1
-Release:       7.1%{?dist}
+Release:       7.2%{?dist}
 Summary:       Legal License for glassfish code
 License:       CDDL or GPLv2 with exceptions
 URL:           http://glassfish.java.net/
@@ -13,7 +13,7 @@ URL:           http://glassfish.java.net/
 Source0:       %{pkg_name}-%{version}-src-svn.tar.gz
 
 BuildRequires: %{?scl_prefix}glassfish-master-pom
-BuildRequires: %{?scl_prefix_java_common}maven-local
+BuildRequires: %{?scl_prefix}maven-local
 BuildRequires: %{?scl_prefix}maven-remote-resources-plugin
 
 Requires:      %{?scl_prefix}glassfish-master-pom
@@ -49,6 +49,9 @@ set -e -x
 %doc LICENSE.txt
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 1.1-7.2
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Mikolaj Izdebski <mizdebsk@redhat.com> - 1.1-7.1
 - SCL-ize package
 
